@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kubus Soal 3D Realtime & Leaderboard</title>
+  
+  <!-- GSAP Core & Flip Plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Background Lighting -->
+  <div class="ambient-light light-1"></div>
+  <div class="ambient-light light-2"></div>
+
+  <!-- Pojok Kiri: Tombol Fullscreen -->
+  <button class="btn-corner-fullscreen" id="btn-corner-fullscreen" title="Layar Penuh">
+    <span class="fs-icon">⛶</span>
+    <span class="fs-text">Layar Penuh</span>
+  </button>
+
+  <!-- 3D Interactive Viewport -->
+  <main class="stage-viewport" id="stage-viewport">
+    
+    <!-- Smooth Harmonic Floating Rig -->
+    <div class="floating-rig" id="floating-rig">
+      
+      <!-- Continuous Rotating 3D Cube (Solid, Fully Sealed, Anti-Tembus) -->
+      <div class="cube-3d" id="cube-3d">
+        
+        <!-- SISI 1: DEPAN (Soal 01 - 05) -->
+        <div class="cube-face face-front" id="face-front"></div>
+
+        <!-- SISI 2: KANAN (Soal 06 - 10) -->
+        <div class="cube-face face-right" id="face-right"></div>
+
+        <!-- SISI 3: BELAKANG (Soal 11 - 15) -->
+        <div class="cube-face face-back" id="face-back"></div>
+
+        <!-- SISI 4: KIRI (Soal 16 - 20) -->
+        <div class="cube-face face-left" id="face-left"></div>
+
+        <!-- SISI 5: ATAS (Logo Physics of Champions) -->
+        <div class="cube-face face-top" id="face-top"></div>
+
+        <!-- SISI 6: BAWAH (Logo Physics of Champions) -->
+        <div class="cube-face face-bottom" id="face-bottom"></div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       SEBELAH KANAN: LEADERBOARD PESERTA (17 PESERTA)
+       ========================================================================== -->
+  <aside class="leaderboard-panel" id="leaderboard-panel">
+    <div class="lb-header">
+      <div class="lb-header-info">
+        <div class="lb-title-wrap">
+          <span class="lb-trophy">🏆</span>
+          <h2 class="lb-title">Klasemen Babak 1</h2>
+        </div>
+      </div>
+      <button class="lb-toggle-btn" id="lb-toggle-btn" title="Sembunyikan / Tampilkan">✕</button>
+    </div>
+
+    <!-- Daftar Peserta -->
+    <div class="lb-list" id="lb-list">
+      <!-- Di-render via app.js -->
+    </div>
+  </aside>
+
+  <!-- Tombol Buka Leaderboard Saat Tersembunyi -->
+  <button class="lb-open-tab" id="lb-open-tab" title="Buka Klasemen Peserta">
+    <span>🏆</span>
+    <span>Klasemen</span>
+  </button>
+
+  <!-- Scripts -->
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

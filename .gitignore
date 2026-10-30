@@ -8,3 +8,5 @@ $RECYCLE.BIN/
 # Logs & temp
 *.log
 *.tmp
+
+push_to_github.ps1
